@@ -1,262 +1,1510 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ওয়েবসাইট আপডেটের কাজ চলছে | Warranty Verification</title>
-    <!-- Google Fonts for Modern Bengali and English Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-gradient-start: #0f172a;
-            --bg-gradient-end: #1e1b4b;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --card-border: rgba(255, 255, 255, 0.1);
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent-glow: rgba(99, 102, 241, 0.25);
-            --badge-bg: rgba(245, 158, 11, 0.15);
-            --badge-text: #fbbf24;
-            --badge-border: rgba(245, 158, 11, 0.3);
-            --list-bg: rgba(255, 255, 255, 0.03);
-            --list-border: rgba(255, 255, 255, 0.06);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <title>মিলন মেলা | স্বাধীন বাংলা প্রেসক্লাব</title>
 
-        body {
-            font-family: 'Noto Sans Bengali', 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
-            color: var(--text-primary);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            overflow-x: hidden;
-            position: relative;
-        }
+  <meta
+    name="description"
+    content="স্বাধীন বাংলা প্রেসক্লাবের গণমাধ্যম কর্মীদের নিয়ে আয়োজিত মিলন মেলা ও সদস্য নিবন্ধন।"
+  />
 
-        /* Ambient Glowing Background Elements */
-        .glow-circle-1, .glow-circle-2 {
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            filter: blur(100px);
-            z-index: 0;
-            pointer-events: none;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-        .glow-circle-1 {
-            background: rgba(79, 70, 229, 0.25);
-            top: 10%;
-            left: 15%;
-            animation: float 8s ease-in-out infinite alternate;
-        }
+  <style>
+    :root {
+      --primary: #063b2c;
+      --primary-dark: #03271e;
+      --secondary: #0c7558;
+      --gold: #d7a928;
+      --gold-light: #f7df91;
+      --cream: #fffaf0;
+      --white: #ffffff;
+      --text: #1c2b25;
+      --muted: #68766f;
+      --border: #e4e9e6;
+      --success: #12804e;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .10);
+      --radius: 22px;
+    }
 
-        .glow-circle-2 {
-            background: rgba(14, 165, 233, 0.2);
-            bottom: 10%;
-            right: 15%;
-            animation: float 10s ease-in-out infinite alternate-reverse;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        @keyframes float {
-            0% { transform: translateY(0) scale(1); }
-            100% { transform: translateY(-30px) scale(1.1); }
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        /* Main Glassmorphic Card */
-        .container {
-            max-width: 680px;
-            width: 100%;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 48px 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
-                        0 0 40px var(--accent-glow);
-            z-index: 1;
-            text-align: center;
-            animation: fadeIn 0.8s ease-out;
-        }
+    body {
+      font-family: "Hind Siliguri", sans-serif;
+      color: var(--text);
+      background: #f7f9f8;
+      line-height: 1.7;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        /* Modern Status Badge */
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--badge-bg);
-            color: var(--badge-text);
-            border: 1px solid var(--badge-border);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 28px;
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
-        }
+    .container {
+      width: min(1140px, 92%);
+      margin: auto;
+    }
 
-        /* Typography & Content */
-        h1 {
-            font-size: 2.1rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            line-height: 1.3;
-            background: linear-gradient(to right, #ffffff, #cbd5e1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    /* ================= HEADER ================= */
 
-        .description {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 36px;
-        }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(3, 39, 30, .96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
 
-        /* Modern Feature List */
-        .features-header {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-            text-align: left;
-        }
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-        .features-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 40px;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+    }
 
-        .features-list li {
-            background: var(--list-bg);
-            border: 1px solid var(--list-border);
-            padding: 14px 20px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-align: left;
-            font-size: 0.98rem;
-            color: #e2e8f0;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #fff0a9);
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: 0 6px 20px rgba(215,169,40,.3);
+    }
 
-        .features-list li:hover {
-            transform: translateX(6px);
-            border-color: rgba(255, 255, 255, 0.15);
-        }
+    .nav-btn {
+      background: linear-gradient(135deg, var(--gold), #f0c957);
+      color: #162319;
+      padding: 10px 19px;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: .25s;
+    }
 
-        .check-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            background: rgba(34, 197, 94, 0.2);
-            color: #4ade80;
-            border-radius: 50%;
-            font-size: 0.85rem;
-            flex-shrink: 0;
-        }
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(215,169,40,.25);
+    }
 
-        /* Footer Section */
-        .footer {
-            border-top: 1px solid var(--card-border);
-            padding-top: 24px;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-        }
+    /* ================= HERO ================= */
 
-        .team-sign {
-            margin-top: 8px;
-            font-weight: 600;
-            color: #38bdf8;
-        }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(215,169,40,.20), transparent 30%),
+        radial-gradient(circle at 10% 80%, rgba(12,117,88,.35), transparent 35%),
+        linear-gradient(135deg, #03271e, #07513d);
+      color: white;
+      padding: 95px 0 105px;
+    }
 
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .container {
-                padding: 36px 24px;
-            }
-            h1 {
-                font-size: 1.6rem;
-            }
-            .description {
-                font-size: 0.95rem;
-            }
-        }
-    </style>
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 50%;
+      right: -150px;
+      top: -150px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 17px;
+      border: 1px solid rgba(247,223,145,.35);
+      background: rgba(255,255,255,.06);
+      border-radius: 50px;
+      color: var(--gold-light);
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: "Noto Serif Bengali", serif;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.2;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: rgba(255,255,255,.83);
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .hero-buttons {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      padding: 14px 25px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #f2ce61);
+      color: #17261d;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(255,255,255,.07);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ================= TRUST ================= */
+
+    .trust-strip {
+      margin-top: -38px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .trust-box {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .trust-item {
+      text-align: center;
+      padding: 8px 15px;
+      border-right: 1px solid var(--border);
+    }
+
+    .trust-item:last-child {
+      border-right: none;
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ================= SECTION ================= */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 45px;
+    }
+
+    .section-head small {
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .section-head h2 {
+      font-family: "Noto Serif Bengali", serif;
+      color: var(--primary);
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.3;
+      margin: 8px 0 13px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    /* ================= BENEFITS ================= */
+
+    .benefits {
+      background: var(--cream);
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .benefit-card {
+      background: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      border: 1px solid #eee7d7;
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-card::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(215,169,40,.08);
+      right: -35px;
+      top: -35px;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: #eef7f3;
+      color: var(--secondary);
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .benefit-card h3 {
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .benefit-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* ================= EVENT ================= */
+
+    .event-layout {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .event-main {
+      background:
+        linear-gradient(135deg, rgba(3,39,30,.97), rgba(8,91,67,.95));
+      color: white;
+      border-radius: 28px;
+      padding: 45px;
+      box-shadow: var(--shadow);
+    }
+
+    .event-main h3 {
+      font-family: "Noto Serif Bengali", serif;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .event-main p {
+      color: rgba(255,255,255,.78);
+    }
+
+    .event-list {
+      margin-top: 25px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .event-list div {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .check {
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background: rgba(215,169,40,.18);
+      color: var(--gold-light);
+      display: grid;
+      place-items: center;
+      flex: 0 0 27px;
+    }
+
+    .event-side {
+      display: grid;
+      gap: 20px;
+    }
+
+    .mini-card {
+      background: white;
+      padding: 28px;
+      border-radius: 23px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 30px rgba(0,0,0,.05);
+    }
+
+    .mini-card h4 {
+      color: var(--primary);
+      margin-bottom: 7px;
+      font-size: 20px;
+    }
+
+    .mini-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* ================= REGISTRATION ================= */
+
+    .registration {
+      background:
+        linear-gradient(180deg, #f7f9f8 0%, #eef5f1 100%);
+    }
+
+    .form-wrap {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: clamp(25px, 5vw, 48px);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .form-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-title h3 {
+      font-family: "Noto Serif Bengali", serif;
+      color: var(--primary);
+      font-size: 30px;
+    }
+
+    .form-title p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 19px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 600;
+      color: #24342d;
+      font-size: 15px;
+    }
+
+    .required {
+      color: #c62828;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #dce4df;
+      border-radius: 12px;
+      padding: 13px 14px;
+      font-family: inherit;
+      font-size: 15px;
+      outline: none;
+      background: #fbfcfb;
+      transition: .2s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 4px rgba(12,117,88,.08);
+      background: white;
+    }
+
+    .help {
+      color: #78847e;
+      font-size: 12px;
+    }
+
+    .notice {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: #fff9e9;
+      border: 1px solid #f1dfaa;
+      color: #685620;
+      font-size: 14px;
+    }
+
+    .consent {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      color: #53615a;
+    }
+
+    .consent input {
+      width: auto;
+      margin-top: 5px;
+    }
+
+    .submit-wrap {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .submit-btn {
+      min-width: 240px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 12px 25px rgba(6,59,44,.2);
+    }
+
+    /* ================= SUCCESS ================= */
+
+    .success {
+      display: none;
+      text-align: center;
+      padding: 35px 15px 10px;
+    }
+
+    .success.show {
+      display: block;
+    }
+
+    .success-icon {
+      width: 76px;
+      height: 76px;
+      margin: auto auto 18px;
+      border-radius: 50%;
+      background: #e7f7ed;
+      color: var(--success);
+      display: grid;
+      place-items: center;
+      font-size: 40px;
+      font-weight: 700;
+    }
+
+    .success h3 {
+      font-family: "Noto Serif Bengali", serif;
+      color: var(--primary);
+      font-size: 29px;
+      margin-bottom: 8px;
+    }
+
+    .success p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .reference {
+      margin: 20px auto;
+      max-width: 380px;
+      padding: 13px;
+      background: #f4f8f5;
+      border-radius: 12px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* ================= FAQ ================= */
+
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      margin-bottom: 12px;
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    details p {
+      color: var(--muted);
+      margin-top: 12px;
+      font-size: 15px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #031f18;
+      color: rgba(255,255,255,.72);
+      padding: 45px 0 25px;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      color: white;
+      font-size: 23px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .footer-main p {
+      font-size: 14px;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .copyright {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 850px) {
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .event-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-box {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 16px;
+      }
+
+      .trust-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav {
+        min-height: 65px;
+      }
+
+      .brand {
+        font-size: 15px;
+      }
+
+      .brand-logo {
+        width: 39px;
+        height: 39px;
+      }
+
+      .nav-btn {
+        padding: 8px 13px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 65px 0 80px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .event-main {
+        padding: 30px 23px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-right {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- Background Glowing Effects -->
-    <div class="glow-circle-1"></div>
-    <div class="glow-circle-2"></div>
+  <!-- ================= HEADER ================= -->
 
-    <!-- Main Content Box -->
-    <main class="container">
-        
-        <!-- Status Badge -->
-        <div class="badge">
-            <span>🚧</span>
-            <span>ওয়েবসাইট আপডেটের কাজ চলছে</span>
+  <header>
+    <div class="container nav">
+
+      <a href="#" class="brand">
+        <div class="brand-logo">স</div>
+        <span>স্বাধীন বাংলা প্রেসক্লাব</span>
+      </a>
+
+      <a href="#registration" class="nav-btn">
+        নিবন্ধন করুন
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          ✦ বিশেষ আয়োজন
         </div>
 
-        <!-- Title & Subtitle -->
-        <h1>স্বাগতম আমাদের Warranty Verification পোর্টালে</h1>
-        
-        <p class="description">
-            আমাদের ওয়েবসাইট বর্তমানে উন্নয়ন ও আপডেটের কাজ চলছে। খুব শীঘ্রই এখানে গ্যারান্টি সম্পর্কিত সকল তথ্য, শর্তাবলী, নিয়ম-নীতি এবং পণ্য যাচাইকরণ সুবিধা যুক্ত করা হবে।
+        <h1>
+          স্বাধীন বাংলা প্রেসক্লাবের
+          <span>মিলন মেলা</span>
+        </h1>
+
+        <p>
+          দেশের বিভিন্ন প্রান্তে কর্মরত গণমাধ্যমকর্মী ও সম্মানিত সদস্যদের
+          নিয়ে আয়োজিত হতে চলেছে একটি বিশেষ মিলন মেলা।
+          পারস্পরিক যোগাযোগ, সম্মাননা ও সৌহার্দ্যপূর্ণ মিলনের এই আয়োজনে
+          আপনিও অংশ নিন।
         </p>
 
-        <!-- Feature Checklist -->
-        <div class="features-header">আপডেট সম্পন্ন হলে আপনি এই পোর্টালে—</div>
-        <ul class="features-list">
-            <li>
-                <span class="check-icon">✓</span>
-                <span>পণ্যের গ্যারান্টি যাচাই করতে পারবেন।</span>
-            </li>
-            <li>
-                <span class="check-icon">✓</span>
-                <span>গ্যারান্টির সকল শর্ত ও নিয়মাবলী দেখতে পারবেন।</span>
-            </li>
-            <li>
-                <span class="check-icon">✓</span>
-                <span>পণ্যের সত্যতা (Authenticity) যাচাই করতে পারবেন।</span>
-            </li>
-            <li>
-                <span class="check-icon">✓</span>
-                <span>প্রয়োজনীয় নির্দেশনা ও কাস্টমার সাপোর্টের তথ্য পাবেন।</span>
-            </li>
-        </ul>
+        <div class="hero-buttons">
+          <a href="#registration" class="btn btn-primary">
+            রেজিস্ট্রেশন করুন
+          </a>
 
-        <!-- Footer -->
-        <div class="footer">
-            <p>আপনার ধৈর্য ও সহযোগিতার জন্য আন্তরিক ধন্যবাদ।</p>
-            <p class="team-sign">— টিম Warranty Verification</p>
+          <a href="#benefits" class="btn btn-outline">
+            সুযোগ-সুবিধা দেখুন
+          </a>
         </div>
 
-    </main>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= TRUST STRIP ================= -->
+
+  <div class="container trust-strip">
+
+    <div class="trust-box">
+
+      <div class="trust-item">
+        <strong>সম্মানিত সদস্যদের জন্য</strong>
+        <span>বিশেষ আয়োজন ও সুবিধা</span>
+      </div>
+
+      <div class="trust-item">
+        <strong>আনুষ্ঠানিক সম্মাননা</strong>
+        <span>সদস্যদের জন্য সম্মাননা কার্যক্রম</span>
+      </div>
+
+      <div class="trust-item">
+        <strong>সুশৃঙ্খল নিবন্ধন</strong>
+        <span>তথ্য যাচাই ও নিশ্চিতকরণ প্রক্রিয়া</span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= BENEFITS ================= -->
+
+  <section class="benefits" id="benefits">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <small>সদস্যদের জন্য বিশেষ সুবিধা</small>
+
+        <h2>
+          মিলন মেলায় থাকছে নানা আয়োজন
+        </h2>
+
+        <p>
+          প্রতিষ্ঠানের সিদ্ধান্ত অনুযায়ী অনুষ্ঠানে অংশগ্রহণকারী
+          যোগ্য সদস্যদের জন্য বিভিন্ন সম্মাননা ও সুবিধার ব্যবস্থা থাকবে।
+        </p>
+
+      </div>
+
+
+      <div class="benefit-grid">
+
+        <div class="benefit-card">
+          <div class="icon">🏆</div>
+          <h3>সাংবাদিক সম্মাননা ক্রেস্ট</h3>
+          <p>
+            যোগ্য সদস্যদের জন্য সাংবাদিকতা ও গণমাধ্যমকর্মী হিসেবে
+            বিশেষ সম্মাননার ব্যবস্থা থাকবে।
+          </p>
+        </div>
+
+
+        <div class="benefit-card">
+          <div class="icon">📜</div>
+          <h3>সম্মাননা সার্টিফিকেট</h3>
+          <p>
+            নির্ধারিত প্রক্রিয়া অনুযায়ী সদস্যদের জন্য
+            সম্মাননা সার্টিফিকেট প্রদানের ব্যবস্থা থাকবে।
+          </p>
+        </div>
+
+
+        <div class="benefit-card">
+          <div class="icon">👕</div>
+          <h3>বিশেষ টি-শার্ট</h3>
+          <p>
+            মিলন মেলা ও সদস্যদের জন্য নির্ধারিত বিশেষ
+            টি-শার্ট প্রদানের ব্যবস্থা থাকবে।
+          </p>
+        </div>
+
+
+        <div class="benefit-card">
+          <div class="icon">🤝</div>
+          <h3>মিলন ও যোগাযোগ</h3>
+          <p>
+            বিভিন্ন অঞ্চলের গণমাধ্যমকর্মীদের মধ্যে যোগাযোগ ও
+            পারস্পরিক সম্পর্ক গড়ে তোলার সুযোগ।
+          </p>
+        </div>
+
+
+        <div class="benefit-card">
+          <div class="icon">🍽️</div>
+          <h3>খাওয়া-দাওয়ার আয়োজন</h3>
+          <p>
+            অনুষ্ঠানে অংশগ্রহণকারী সদস্যদের জন্য
+            আয়োজকদের পক্ষ থেকে খাবারের ব্যবস্থা থাকবে।
+          </p>
+        </div>
+
+
+        <div class="benefit-card">
+          <div class="icon">📦</div>
+          <h3>অনুপস্থিত সদস্যদের জন্য</h3>
+          <p>
+            যারা অনুষ্ঠানে অংশগ্রহণ করতে পারবেন না, তাদের জন্য
+            প্রযোজ্য সম্মাননা সামগ্রী কুরিয়ারের মাধ্যমে পাঠানোর
+            ব্যবস্থা থাকতে পারে।
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= EVENT DETAILS ================= -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <small>বিশেষ ঘোষণা</small>
+
+        <h2>
+          সদস্যরা কীভাবে সুবিধা পাবেন?
+        </h2>
+
+      </div>
+
+
+      <div class="event-layout">
+
+        <div class="event-main">
+
+          <h3>
+            মিলন মেলায় অংশগ্রহণ করুন
+          </h3>
+
+          <p>
+            নির্ধারিত প্রক্রিয়ায় নিবন্ধন সম্পন্ন করার পর আপনার
+            তথ্য যাচাই করা হবে। পরবর্তী নির্দেশনা ও অনুষ্ঠানসংক্রান্ত
+            গুরুত্বপূর্ণ তথ্য প্রযোজ্য ক্ষেত্রে SMS-এর মাধ্যমে জানানো হবে।
+          </p>
+
+          <div class="event-list">
+
+            <div>
+              <span class="check">✓</span>
+              <span>নিবন্ধন তথ্য জমা</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>সদস্য তথ্য যাচাই</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>নিশ্চিতকরণ SMS</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>পরবর্তী নির্দেশনা প্রদান</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event-side">
+
+          <div class="mini-card">
+
+            <h4>যারা অংশগ্রহণ করতে পারবেন</h4>
+
+            <p>
+              নির্ধারিত যোগ্যতা ও সদস্যপদ অনুযায়ী যেসব সদস্য
+              মিলন মেলায় অংশগ্রহণের সুযোগ পাবেন, তাদের জন্য
+              অনুষ্ঠানে নির্ধারিত সুবিধাগুলো থাকবে।
+            </p>
+
+          </div>
+
+
+          <div class="mini-card">
+
+            <h4>যারা অংশগ্রহণ করতে পারবেন না</h4>
+
+            <p>
+              অনুষ্ঠানে উপস্থিত হতে না পারা যোগ্য সদস্যদের জন্য
+              প্রযোজ্য সম্মাননা সামগ্রী কুরিয়ারের মাধ্যমে পাঠানোর
+              ব্যবস্থা থাকলে তা নিবন্ধিত তথ্য অনুযায়ী সম্পন্ন করা হবে।
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= REGISTRATION ================= -->
+
+  <section class="registration" id="registration">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <small>Member Registration</small>
+
+        <h2>
+          মিলন মেলা নিবন্ধন ফর্ম
+        </h2>
+
+        <p>
+          নিচের তথ্যগুলো সঠিকভাবে পূরণ করুন। তথ্য যাচাইয়ের পর
+          পরবর্তী নির্দেশনা আপনাকে জানানো হবে।
+        </p>
+
+      </div>
+
+
+      <div class="form-wrap">
+
+        <!-- FORM -->
+
+        <form id="registrationForm">
+
+          <div class="form-title">
+
+            <h3>
+              সদস্য তথ্য জমা দিন
+            </h3>
+
+            <p>
+              অনুগ্রহ করে সঠিক ও প্রয়োজনীয় তথ্য প্রদান করুন।
+            </p>
+
+          </div>
+
+
+          <div class="form-grid">
+
+            <!-- NAME -->
+
+            <div class="field full">
+
+              <label>
+                আপনার পূর্ণ নাম <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="আপনার পূর্ণ নাম লিখুন"
+                required
+              />
+
+            </div>
+
+
+            <!-- MOBILE -->
+
+            <div class="field">
+
+              <label>
+                মোবাইল নম্বর <span class="required">*</span>
+              </label>
+
+              <input
+                type="tel"
+                id="mobile"
+                name="mobile"
+                placeholder="01XXXXXXXXX"
+                pattern="01[0-9]{9}"
+                required
+              />
+
+            </div>
+
+
+            <!-- DISTRICT -->
+
+            <div class="field">
+
+              <label>
+                জেলা <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="district"
+                name="district"
+                placeholder="আপনার জেলা"
+                required
+              />
+
+            </div>
+
+
+            <!-- UPAZILA -->
+
+            <div class="field">
+
+              <label>
+                উপজেলা <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="upazila"
+                name="upazila"
+                placeholder="আপনার উপজেলা"
+                required
+              />
+
+            </div>
+
+
+            <!-- ID CARD -->
+
+            <div class="field">
+
+              <label>
+                সদস্য/আইডি কার্ড নম্বর
+                <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="cardNumber"
+                name="cardNumber"
+                placeholder="আপনার আইডি কার্ড নম্বর"
+                required
+              />
+
+              <span class="help">
+                আপনার আইডি কার্ডে থাকা নম্বরটি লিখুন।
+              </span>
+
+            </div>
+
+
+            <!-- ADDRESS -->
+
+            <div class="field full">
+
+              <label>
+                কুরিয়ার গ্রহণের ঠিকানা
+                <span class="required">*</span>
+              </label>
+
+              <textarea
+                id="address"
+                name="address"
+                rows="3"
+                placeholder="বাড়ি/গ্রাম, ইউনিয়ন/ওয়ার্ড, উপজেলা, জেলা লিখুন"
+                required
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <!-- NOTICE -->
+
+          <div class="notice">
+
+            <strong>বিশেষ দ্রষ্টব্য:</strong>
+
+            আপনার আইডি কার্ড এখনো গ্রহণ না করে থাকলে,
+            অনুগ্রহ করে সংশ্লিষ্ট সাপোর্ট টিমের সঙ্গে যোগাযোগ করে
+            বিষয়টি নিশ্চিত করুন। শুধুমাত্র প্রয়োজনীয় ও যাচাইযোগ্য
+            তথ্য প্রদান করুন।
+
+          </div>
+
+
+          <!-- CONSENT -->
+
+          <label class="consent">
+
+            <input
+              type="checkbox"
+              id="consent"
+              required
+            />
+
+            <span>
+              আমি নিশ্চিত করছি যে উপরের তথ্যগুলো আমার জ্ঞাতসারে
+              প্রদান করছি এবং নিবন্ধন ও যোগাযোগের প্রয়োজনে
+              প্রতিষ্ঠান এগুলো ব্যবহার করতে পারবে।
+            </span>
+
+          </label>
+
+
+          <!-- SUBMIT -->
+
+          <div class="submit-wrap">
+
+            <button
+              type="submit"
+              class="btn submit-btn"
+            >
+              তথ্য জমা দিন
+            </button>
+
+          </div>
+
+        </form>
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <div class="success" id="successMessage">
+
+          <div class="success-icon">
+            ✓
+          </div>
+
+          <h3>
+            অভিনন্দন!
+          </h3>
+
+          <p>
+            আপনার নিবন্ধন তথ্য সফলভাবে জমা হয়েছে।
+            তথ্যগুলো যাচাই করার পর পরবর্তী নির্দেশনা ও
+            কনফার্মেশন SMS আপনার মোবাইল নম্বরে পাঠানো হবে।
+          </p>
+
+          <div class="reference">
+            নিবন্ধন রেফারেন্স:
+            <span id="referenceNumber"></span>
+          </div>
+
+          <button
+            class="btn btn-primary"
+            onclick="location.reload()"
+          >
+            নতুন করে নিবন্ধন
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FAQ ================= -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <small>সাধারণ প্রশ্ন</small>
+
+        <h2>
+          আপনার জানা প্রয়োজন
+        </h2>
+
+      </div>
+
+
+      <div class="faq">
+
+        <details>
+
+          <summary>
+            নিবন্ধনের পর কী হবে?
+          </summary>
+
+          <p>
+            আপনার দেওয়া তথ্য যাচাই করা হবে। যাচাই সম্পন্ন হলে
+            প্রযোজ্য ক্ষেত্রে পরবর্তী নির্দেশনা SMS-এর মাধ্যমে
+            জানানো হবে।
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            অনুষ্ঠানে উপস্থিত হতে না পারলে কী হবে?
+          </summary>
+
+          <p>
+            যোগ্য সদস্য অনুষ্ঠানে উপস্থিত হতে না পারলে,
+            প্রযোজ্য সম্মাননা সামগ্রী কুরিয়ারের মাধ্যমে
+            পাঠানোর ব্যবস্থা থাকলে তা নিবন্ধিত তথ্য অনুযায়ী
+            সম্পন্ন করা হবে।
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            নিবন্ধনের সময় কোন তথ্য দিতে হবে?
+          </summary>
+
+          <p>
+            পূর্ণ নাম, মোবাইল নম্বর, জেলা, উপজেলা, সদস্য/আইডি
+            কার্ড নম্বর এবং কুরিয়ার গ্রহণের ঠিকানা দিতে হবে।
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            ভুল তথ্য দিলে কী হবে?
+          </summary>
+
+          <p>
+            তথ্য জমা দেওয়ার আগে সব তথ্য ভালোভাবে যাচাই করুন।
+            ভুল তথ্যের কারণে পরবর্তী যোগাযোগ বা ডেলিভারিতে
+            সমস্যা হতে পারে।
+          </p>
+
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div>
+
+          <div class="footer-brand">
+            স্বাধীন বাংলা প্রেসক্লাব
+          </div>
+
+          <p>
+            গণমাধ্যমকর্মী ও সদস্যদের পারস্পরিক যোগাযোগ,
+            সম্মাননা ও সহযোগিতার লক্ষ্যে আয়োজিত বিশেষ উদ্যোগ।
+          </p>
+
+        </div>
+
+
+        <div class="footer-right">
+
+          <p>
+            সদস্যদের তথ্যের গোপনীয়তা ও নিরাপত্তাকে
+            সর্বোচ্চ গুরুত্ব দেওয়া উচিত।
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+
+        © <span id="year"></span>
+        স্বাধীন বাংলা প্রেসক্লাব — সর্বস্বত্ব সংরক্ষিত।
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    const form =
+      document.getElementById("registrationForm");
+
+    const successMessage =
+      document.getElementById("successMessage");
+
+    const referenceNumber =
+      document.getElementById("referenceNumber");
+
+
+    form.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+
+      /*
+        DEMO STORAGE
+
+        এখানে শুধু ব্রাউজারে ডেমো হিসেবে তথ্য রাখা হচ্ছে।
+        Production website-এ অবশ্যই নিরাপদ backend/database ব্যবহার করুন।
+      */
+
+      const data = {
+
+        name:
+          document.getElementById("name").value.trim(),
+
+        mobile:
+          document.getElementById("mobile").value.trim(),
+
+        district:
+          document.getElementById("district").value.trim(),
+
+        upazila:
+          document.getElementById("upazila").value.trim(),
+
+        cardNumber:
+          document.getElementById("cardNumber").value.trim(),
+
+        address:
+          document.getElementById("address").value.trim(),
+
+        submittedAt:
+          new Date().toISOString()
+
+      };
+
+
+      const registrationList =
+        JSON.parse(
+          localStorage.getItem("pressClubRegistrations") || "[]"
+        );
+
+
+      registrationList.push(data);
+
+
+      localStorage.setItem(
+        "pressClubRegistrations",
+        JSON.stringify(registrationList)
+      );
+
+
+      /*
+        রেজিস্ট্রেশন নম্বর
+      */
+
+      const ref =
+        "SBPC-" +
+        Date.now().toString().slice(-8);
+
+
+      referenceNumber.textContent = ref;
+
+
+      /*
+        FORM HIDE
+      */
+
+      form.style.display = "none";
+
+
+      /*
+        SUCCESS SHOW
+      */
+
+      successMessage.classList.add("show");
+
+
+      /*
+        SUCCESS SECTION-এ স্ক্রল
+      */
+
+      successMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
