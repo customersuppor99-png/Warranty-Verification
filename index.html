@@ -3,135 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বিশেষ ঘোষণা ও নতুন ওয়েবসাইট রেজিস্ট্রেশন পোর্টাল</title>
+    <title>বিশেষ ঘোষণা ও নতুন ওয়েবসাইট রেজিস্ট্রেশন</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts (Bangla Supported) -->
+    <!-- Google Fonts - Hind Siliguri -->
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Hind Siliguri', sans-serif;
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Hind Siliguri"', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
         }
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(16px);
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-blue-900 min-h-screen text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-white min-h-screen font-sans selection:bg-rose-500 selection:text-white pb-16">
 
-    <!-- Main Container -->
-    <div class="max-w-4xl mx-auto px-4 py-8 md:py-12">
-        
-        <!-- Header Banner / Card -->
-        <div class="glass-effect rounded-3xl shadow-2xl overflow-hidden border border-white/20 p-6 md:p-12 relative mb-8">
-            
-            <!-- Top Alert Badge -->
-            <div class="text-center mb-6">
-                <span class="bg-red-600 text-white text-xs md:text-sm font-bold px-5 py-2 rounded-full uppercase tracking-wider animate-pulse shadow-lg inline-block">
-                    ⚠️ জরুরি ও বিশেষ ঘোষণা — ২০২৬
-                </span>
-                <h1 class="text-2xl md:text-5xl font-extrabold text-slate-900 mt-5 leading-tight">
-                    নতুন ওয়েবসাইটে সদস্যদের জন্য বিশেষ ঘোষণা
-                </h1>
-            </div>
+    <!-- Top Notification Bar -->
+    <div class="bg-gradient-to-r from-red-600 via-rose-600 to-amber-600 text-white text-center py-2.5 px-4 text-sm sm:text-base font-medium shadow-lg animate-pulse">
+        <i class="fa-solid fa-bullhorn mr-2"></i> সময় শেষ হয়ে जानेর আগে আপনার আবেদন ফরমটি দ্রুত জমা দিন!
+    </div>
 
-            <!-- Intro Text -->
-            <div class="space-y-4 text-slate-700 text-base md:text-lg leading-relaxed border-b border-slate-200 pb-8">
-                <p class="font-bold text-indigo-900 text-lg">সম্মানিত প্রিয় প্রতিনিধি ও সদস্যবৃন্দ,</p>
-                <p>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 pt-8">
+
+        <!-- Header Section -->
+        <header class="text-center mb-10">
+            <span class="inline-block bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider shadow-inner">
+                ⚡ বিশেষ ঘোষণা ও আপডেট
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white via-indigo-200 to-indigo-400 bg-clip-text text-transparent">
+                নতুন ওয়েবসাইটে সদস্যদের জন্য বিশেষ ঘোষণা
+            </h1>
+            <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                সম্মানিত প্রিয় প্রতিনিধি ও সদস্যবৃন্দ, নতুন ওয়েবসাইটের অ্যাকাউন্ট, টি-শার্ট এবং আইডি কার্ড পেতে নিচের নির্দেশনাগুলো অনুসরণ করুন।
+            </p>
+        </header>
+
+        <!-- Main Notice Card -->
+        <main class="space-y-8">
+            <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-16 -top-16 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <h3 class="text-xl sm:text-2xl font-bold text-rose-400 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-exclamation"></i> জরুরি নির্দেশনা
+                </h3>
+                <p class="text-gray-200 text-base sm:text-lg leading-relaxed mb-6">
                     যেসব সম্মানিত প্রতিনিধি ও সদস্য এখনো আমাদের নতুন ওয়েবসাইটের অ্যাকাউন্ট, নতুন টি-শার্ট এবং আইডি কার্ড পাননি, তাদের অনুরোধ করা যাচ্ছে—নিচের আবেদন ফরমটি দ্রুত পূরণ করে জমা দিন।
                 </p>
-            </div>
 
-            <!-- About Website Features -->
-            <div class="py-8 border-b border-slate-200">
-                <h2 class="text-2xl font-bold text-indigo-900 mb-4 flex items-center gap-2">
-                    🌐 আমাদের নতুন ওয়েবসাইটের আধুনিক সুযোগ-সুবিধা
-                </h2>
-                <p class="text-slate-600 mb-6">
-                    আপনাদের জন্য তৈরি করা হয়েছে একটি সম্পূর্ণ আধুনিক, প্রফেশনাল ও উন্নতমানের অনলাইন সংবাদ প্ল্যাটফর্ম, যেখানে একজন প্রতিনিধির সংবাদ প্রকাশ ও পরিচয় ব্যবস্থাপনাকে আরও সহজ করা হয়েছে।
-                </p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm md:text-base text-slate-700">
-                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ অডিও নিউজ প্রকাশ</div>
-                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ ভিডিও নিউজ প্রকাশ</div>
-                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ ই-পেপার ও নিউজ ফটো কার্ড</div>
-                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ সরাসরি সংবাদ প্রচার ও লাইভ টিভি</div>
-                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ প্রতিনিধিদের নিজস্ব অ্যাকাউন্ট</div>
-                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ কিউআর কোডযুক্ত আইডি কার্ড</div>
-                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ প্রতিনিধির তথ্য যাচাই ও অটো ওয়াটারমার্ক</div>
-                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ অটোমেটিক সংবাদ আপলোড সিস্টেম</div>
+                <!-- Features Grid -->
+                <div class="mt-8">
+                    <h4 class="text-lg font-semibold text-indigo-300 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> নতুন ওয়েবসাইটে থাকছে আধুনিক সুযোগ-সুবিধা:
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm sm:text-base">
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-xl flex items-center gap-3 hover:bg-white/10 transition">
+                            <i class="fa-solid fa-microphone-lines text-indigo-400 text-lg"></i> অডিও নিউজ প্রকাশ
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-xl flex items-center gap-3 hover:bg-white/10 transition">
+                            <i class="fa-solid fa-video text-rose-400 text-lg"></i> ভিডিও নিউজ প্রকাশ
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-xl flex items-center gap-3 hover:bg-white/10 transition">
+                            <i class="fa-solid fa-newspaper text-amber-400 text-lg"></i> ই-পেপার ও নিউজ ফটো কার্ড
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-xl flex items-center gap-3 hover:bg-white/10 transition">
+                            <i class="fa-solid fa-tower-broadcast text-emerald-400 text-lg"></i> লাইভ টিভি ও সরাসরি সম্প্রচার
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-xl flex items-center gap-3 hover:bg-white/10 transition">
+                            <i class="fa-solid fa-qrcode text-cyan-400 text-lg"></i> কিউআর কোডযুক্ত আইডি কার্ড
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-xl flex items-center gap-3 hover:bg-white/10 transition">
+                            <i class="fa-solid fa-bolt text-yellow-400 text-lg"></i> অটোমেটিক সংবাদ আপলোড সিস্টেম
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block text-xs text-indigo-300 bg-indigo-950/60 border border-indigo-500/30 px-3 py-1 rounded-full">
+                            ✨ আরও ১০০+ আধুনিক সুযোগ-সুবিধা সম্বলিত প্ল্যাটফর্ম!
+                        </span>
+                    </div>
                 </div>
-                <p class="text-sm font-bold text-indigo-600 mt-4 text-center bg-indigo-100/50 py-2 rounded-xl">+ আরও ১০০+ আধুনিক সুযোগ-সুবিধা সম্বলিত প্ল্যাটফর্ম!</p>
             </div>
 
             <!-- Video Section -->
-            <div class="py-8 border-b border-slate-200 text-center">
-                <h2 class="text-xl md:text-2xl font-bold text-indigo-900 mb-3">🎬 নতুন ওয়েবসাইটের ভিডিও প্রিভিউ</h2>
-                <p class="text-sm text-slate-600 mb-4">নিচের ভিডিওতে আমাদের নতুন ওয়েবসাইটের কার্যক্রম ও সুবিধাগুলো দেখে নিন [00:00:15]।</p>
-                
-                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-300">
+            <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-2xl">
+                <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-brands fa-youtube text-red-500 text-2xl"></i> নতুন ওয়েবসাইটের ভিডিও প্রিভিউ
+                </h3>
+                <p class="text-gray-300 text-sm mb-4">নিচের ভিডিওতে আমাদের নতুন ওয়েবসাইটের কার্যক্রম ও সুবিধাগুলো দেখে নিন।</p>
+                <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-white/10">
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/OZxgCbBQ448" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
 
-            <!-- Countdown Timer Section -->
-            <div class="py-6 my-8 text-center bg-amber-50 rounded-3xl p-6 border-2 border-amber-200 shadow-inner">
-                <h3 class="text-amber-900 font-bold text-lg mb-2">⏳ আপনার আবেদনের জন্য বাকি সময়</h3>
-                <div id="countdown" class="text-3xl md:text-5xl font-mono font-black text-red-600 tracking-wider">
-                    01 : 00 : 00
+            <!-- Countdown Section -->
+            <div class="bg-gradient-to-r from-rose-900/40 via-red-950/50 to-amber-950/40 border border-rose-500/30 rounded-2xl p-6 text-center shadow-xl">
+                <h4 class="text-amber-400 font-semibold mb-2"><i class="fa-solid fa-hourglass-half animate-spin mr-1"></i> আপনার আবেদনের বাকি সময়</h4>
+                <div id="countdown" class="text-3xl sm:text-4xl font-extrabold tracking-widest text-white mb-2">
+                    00 : 59 : 59
                 </div>
-                <p class="text-xs md:text-sm text-amber-800 mt-1 font-medium">ঘণ্টা : মিনিট : সেকেন্ড</p>
-                <p class="text-sm text-red-700 font-bold mt-3">«সময় শেষ হয়ে গেলে আবেদন গ্রহণের সুযোগ আর নাও থাকতে পারে [00:00:00]!»</p>
+                <p class="text-xs sm:text-sm text-gray-300">«সময় শেষ হয়ে গেলে আবেদন গ্রহণের সুযোগ আর নাও থাকতে পারে।»</p>
             </div>
 
-            <!-- Important Notice -->
-            <div class="bg-red-50 border-l-8 border-red-600 p-5 rounded-r-2xl my-6 shadow-sm">
-                <h4 class="font-bold text-red-900 text-lg mb-1">⚠️ গুরুত্বপূর্ণ ঘোষণা</h4>
-                <p class="text-sm md:text-base text-red-800 leading-relaxed">
-                    ভবিষ্যতে আর কোনো অনলাইন নিয়োগ প্রদান করা হবে না। এটি অনলাইনভিত্তিক সদস্য/প্রতিনিধি আবেদন গ্রহণের বিশেষ সুযোগ। পরবর্তীতে আর কোনোদিন অনলাইনভিত্তিক নিয়োগ বা একই ধরনের আবেদন গ্রহণ করা হবে না। তাই সুযোগ হাতছাড়া না করে দ্রুত আবেদন করুন।
-                </p>
-            </div>
-
-            <!-- Google Form Embedded Section (Directly Inside Website) -->
-            <div id="apply-section" class="mt-10 pt-8 border-t-2 border-slate-200">
-                <div class="text-center mb-6">
-                    <span class="bg-indigo-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase">অনলাইনের মাধ্যমে সরাসরি আবেদন করুন</span>
-                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mt-3">নিচের গুগল ফরমটি পূরণ করুন</h2>
-                    <p class="text-sm text-slate-600 mt-1">আপনার তথ্য দিয়ে সরাসরি ফরমটি সাবমিট করুন।</p>
+            <!-- Auto Redirect Notice & Action Buttons -->
+            <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-2xl text-center space-y-6">
+                <div class="bg-indigo-950/60 border border-indigo-500/30 rounded-xl p-4 text-indigo-200 text-sm">
+                    <i class="fa-solid fa-circle-info text-cyan-400 mr-1"></i> 
+                    আপনার সুবিধার্থে এই Landing Page-টি <span id="timer-sec" class="font-bold text-amber-400 text-base">২৫</span> সেকেন্ড পর স্বয়ংক্রিয়ভাবে Google Form-এ Redirect হবে।
                 </div>
 
-                <!-- Google Form Iframe Container -->
-                <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-300 p-2 md:p-4">
-                    <iframe src="https://forms.gle/ZxHbgZfihvj6JXBv7" width="100%" height="850" frameborder="0" marginheight="0" marginwidth="0" class="rounded-2xl">লোড হচ্ছে...</iframe>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                    <!-- Button 1 -->
+                    <a href="https://forms.gle/ZxHbgZfihvj6JXBv7" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> আবেদন ফরম খুলুন
+                    </a>
+                    <!-- Button 2 -->
+                    <a href="https://forms.gle/ZxHbgZfihvj6JXBv7" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-pen-to-square"></i> আমি সংবাদ আপলোড করতে পারছি না
+                    </a>
+                    <!-- Button 3 -->
+                    <a href="https://forms.gle/ZxHbgZfihvj6JXBv7" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-address-card"></i> তথ্য জমা দিতে চাই নতুন করে
+                    </a>
                 </div>
             </div>
-
-            <!-- Auto Redirect Notice -->
-            <div class="text-center bg-slate-100 p-4 rounded-2xl text-xs md:text-sm text-slate-600 mt-8">
-                ⏱️ আপনার সুবিধার্থে এই পেজটি ২৫ সেকেন্ড পর স্বয়ংক্রিয়ভাবে ফুল স্ক্রিন Google Form-এ নিয়ে যাবে। <span id="timer" class="font-bold text-indigo-600">২৫</span> সেকেন্ড বাকি আছে।
-            </div>
-
-        </div>
+        </main>
 
         <!-- Footer -->
-        <footer class="text-center text-slate-400 text-sm py-4">
-            <p>© ২০২৬ নতুন ওয়েবসাইট ম্যানেজমেন্ট টিম | সর্বস্বত্ব সংরক্ষিত।</p>
+        <footer class="text-center mt-12 text-gray-500 text-xs sm:text-sm">
+            <p>&copy; 2026 নতুন অনলাইন সংবাদ প্ল্যাটফর্ম | সর্বস্বত্ব সংরক্ষিত।</p>
         </footer>
 
     </div>
 
-    <!-- JavaScript for Redirect Timer -->
+    <!-- JavaScript for Auto Redirect and Countdown Display -->
     <script>
+        // Auto Redirect after 25 seconds
         let timeLeft = 25;
-        const timerSpan = document.getElementById('timer');
-        
-        const countdownInterval = setInterval(() => {
+        const timerSecElement = document.getElementById('timer-sec');
+
+        const redirectTimer = setInterval(() => {
             timeLeft--;
-            timerSpan.textContent = timeLeft;
+            if (timerSecElement) {
+                timerSecElement.textContent = timeLeft;
+            }
             if (timeLeft <= 0) {
-                clearInterval(countdownInterval);
+                clearInterval(redirectTimer);
                 window.location.href = "https://forms.gle/ZxHbgZfihvj6JXBv7";
             }
         }, 1000);
