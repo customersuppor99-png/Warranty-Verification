@@ -69,7 +69,7 @@
             <!-- Video Section -->
             <div class="py-8 border-b border-slate-200 text-center">
                 <h2 class="text-xl md:text-2xl font-bold text-indigo-900 mb-3">🎬 নতুন ওয়েবসাইটের ভিডিও প্রিভিউ</h2>
-                <p class="text-sm text-slate-600 mb-4">নিচের ভিডিওতে আমাদের নতুন ওয়েবসাইটের কার্যক্রম ও সুবিধাগুলো দেখে নিন।</p>
+                <p class="text-sm text-slate-600 mb-4">নিচের ভিডিওতে আমাদের নতুন ওয়েবসাইটের কার্যক্রম ও সুবিধাগুলো দেখে নিন [00:00:15]।</p>
                 
                 <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-300">
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/OZxgCbBQ448" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -83,7 +83,7 @@
                     01 : 00 : 00
                 </div>
                 <p class="text-xs md:text-sm text-amber-800 mt-1 font-medium">ঘণ্টা : মিনিট : সেকেন্ড</p>
-                <p class="text-sm text-red-700 font-bold mt-3">«সময় শেষ হয়ে গেলে আবেদন গ্রহণের সুযোগ আর নাও থাকতে পারে!»</p>
+                <p class="text-sm text-red-700 font-bold mt-3">«সময় শেষ হয়ে গেলে আবেদন গ্রহণের সুযোগ আর নাও থাকতে পারে [00:00:00]!»</p>
             </div>
 
             <!-- Important Notice -->
@@ -94,67 +94,23 @@
                 </p>
             </div>
 
-            <!-- INTEGRATED APPLICATION FORM SECTION (A to Z Built Inside Code) -->
+            <!-- Google Form Embedded Section (Directly Inside Website) -->
             <div id="apply-section" class="mt-10 pt-8 border-t-2 border-slate-200">
-                <div class="text-center mb-8">
-                    <span class="bg-indigo-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase">অনলাইন রেজিস্ট্রেশন ফর্ম</span>
-                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mt-3">আপনার তথ্য দিয়ে ফরমটি পূরণ করুন</h2>
-                    <p class="text-sm text-slate-600 mt-1">সঠিক তথ্য দিয়ে নিচের ফর্মটি সাবমিট করুন। পরবর্তী কার্যক্রম সম্পন্ন করা হবে।</p>
+                <div class="text-center mb-6">
+                    <span class="bg-indigo-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase">অনলাইনের মাধ্যমে সরাসরি আবেদন করুন</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mt-3">নিচের গুগল ফরমটি পূরণ করুন</h2>
+                    <p class="text-sm text-slate-600 mt-1">আপনার তথ্য দিয়ে সরাসরি ফরমটি সাবমিট করুন।</p>
                 </div>
 
-                <!-- Custom Built Application Form -->
-                <form id="regForm" onsubmit="handleFormSubmit(event)" class="space-y-5 bg-slate-50/80 p-6 md:p-8 rounded-3xl border border-slate-200 shadow-lg">
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">আপনার পূর্ণ নাম (Full Name) <span class="text-red-500">*</span></label>
-                        <input type="text" id="fullName" required placeholder="আপনার নাম বাংলায় বা ইংরেজিতে লিখুন" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none bg-white text-slate-800 font-medium">
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2">মোবাইল নম্বর (WhatsApp No) <span class="text-red-500">*</span></label>
-                            <input type="tel" id="phone" required placeholder="যেমন: 017XXXXXXXX" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none bg-white text-slate-800 font-medium">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2">পদবি / রেসপন্সিবিলিটি <span class="text-red-500">*</span></label>
-                            <input type="text" id="designation" required placeholder="যেমন: প্রতিনিধি / সাংবাদিক" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none bg-white text-slate-800 font-medium">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2">জেলা ও উপজেলা <span class="text-red-500">*</span></label>
-                            <input type="text" id="location" required placeholder="যেমন: ঠাকুরগাঁও, রাণীশংকৈল" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none bg-white text-slate-800 font-medium">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2">টি-শার্ট সাইজ (T-Shirt Size) <span class="text-red-500">*</span></label>
-                            <select id="tshirtSize" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none bg-white text-slate-800 font-medium">
-                                <option value="">সাইজ নির্বাচন করুন</option>
-                                <option value="M">Medium (M)</option>
-                                <option value="L">Large (L)</option>
-                                <option value="XL">Extra Large (XL)</option>
-                                <option value="XXL">Double XL (XXL)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">আপনার ইমেইল ঠিকানা (Optional)</label>
-                        <input type="email" id="email" placeholder="example@gmail.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none bg-white text-slate-800 font-medium">
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold text-lg py-4 rounded-2xl shadow-xl hover:shadow-indigo-500/40 transition transform hover:-translate-y-0.5">
-                        🚀 আবেদন সম্পূর্ণ করুন ও সাবমিট করুন
-                    </button>
-                </form>
-
-                <!-- Success Message Box (Hidden by default) -->
-                <div id="successBox" class="hidden text-center bg-emerald-50 border-2 border-emerald-500 p-8 rounded-3xl mt-6 shadow-xl">
-                    <div class="text-5xl mb-3">🎉</div>
-                    <h3 class="text-2xl font-bold text-emerald-900 mb-2">আপনার আবেদন সফলভাবে জমা হয়েছে!</h3>
-                    <p class="text-emerald-700 text-base">আমাদের টেকনিক্যাল টিম আপনার তথ্য যাচাই করে খুব শীঘ্রই আপনার সাথে যোগাযোগ করবে এবং আপনার নতুন অ্যাকাউন্ট, আইডি কার্ড ও টি-শার্ট পৌঁছে দেওয়া হবে। ধন্যবাদ!</p>
+                <!-- Google Form Iframe Container -->
+                <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-300 p-2 md:p-4">
+                    <iframe src="https://forms.gle/ZxHbgZfihvj6JXBv7" width="100%" height="850" frameborder="0" marginheight="0" marginwidth="0" class="rounded-2xl">লোড হচ্ছে...</iframe>
                 </div>
+            </div>
+
+            <!-- Auto Redirect Notice -->
+            <div class="text-center bg-slate-100 p-4 rounded-2xl text-xs md:text-sm text-slate-600 mt-8">
+                ⏱️ আপনার সুবিধার্থে এই পেজটি ২৫ সেকেন্ড পর স্বয়ংক্রিয়ভাবে ফুল স্ক্রিন Google Form-এ নিয়ে যাবে। <span id="timer" class="font-bold text-indigo-600">২৫</span> সেকেন্ড বাকি আছে।
             </div>
 
         </div>
@@ -166,22 +122,19 @@
 
     </div>
 
-    <!-- JavaScript for Handling Form & Dynamic Actions -->
+    <!-- JavaScript for Redirect Timer -->
     <script>
-        function handleFormSubmit(event) {
-            event.preventDefault(); // Prevent page reload
-            
-            // Get form values if needed for processing
-            const name = document.getElementById('fullName').value;
-            const phone = document.getElementById('phone').value;
-
-            // Hide form and show gorgeous success greeting
-            document.getElementById('regForm').style.display = 'none';
-            document.getElementById('successBox').classList.remove('hidden');
-
-            // Optional: You can connect this to Google Sheets API or Formspree later if you want server storage!
-            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-        }
+        let timeLeft = 25;
+        const timerSpan = document.getElementById('timer');
+        
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            timerSpan.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = "https://forms.gle/ZxHbgZfihvj6JXBv7";
+            }
+        }, 1000);
     </script>
 </body>
 </html>
