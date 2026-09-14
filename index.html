@@ -1,1510 +1,187 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>মিলন মেলা | স্বাধীন বাংলা প্রেসক্লাব</title>
-
-  <meta
-    name="description"
-    content="স্বাধীন বাংলা প্রেসক্লাবের গণমাধ্যম কর্মীদের নিয়ে আয়োজিত মিলন মেলা ও সদস্য নিবন্ধন।"
-  />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <style>
-    :root {
-      --primary: #063b2c;
-      --primary-dark: #03271e;
-      --secondary: #0c7558;
-      --gold: #d7a928;
-      --gold-light: #f7df91;
-      --cream: #fffaf0;
-      --white: #ffffff;
-      --text: #1c2b25;
-      --muted: #68766f;
-      --border: #e4e9e6;
-      --success: #12804e;
-      --shadow: 0 20px 60px rgba(0, 0, 0, .10);
-      --radius: 22px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Hind Siliguri", sans-serif;
-      color: var(--text);
-      background: #f7f9f8;
-      line-height: 1.7;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(1140px, 92%);
-      margin: auto;
-    }
-
-    /* ================= HEADER ================= */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(3, 39, 30, .96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-
-    .nav {
-      min-height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: white;
-      font-weight: 700;
-      font-size: 20px;
-    }
-
-    .brand-logo {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), #fff0a9);
-      color: var(--primary-dark);
-      display: grid;
-      place-items: center;
-      font-weight: 700;
-      font-size: 20px;
-      box-shadow: 0 6px 20px rgba(215,169,40,.3);
-    }
-
-    .nav-btn {
-      background: linear-gradient(135deg, var(--gold), #f0c957);
-      color: #162319;
-      padding: 10px 19px;
-      border-radius: 50px;
-      font-weight: 700;
-      transition: .25s;
-    }
-
-    .nav-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(215,169,40,.25);
-    }
-
-    /* ================= HERO ================= */
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 85% 20%, rgba(215,169,40,.20), transparent 30%),
-        radial-gradient(circle at 10% 80%, rgba(12,117,88,.35), transparent 35%),
-        linear-gradient(135deg, #03271e, #07513d);
-      color: white;
-      padding: 95px 0 105px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 50%;
-      right: -150px;
-      top: -150px;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 850px;
-      text-align: center;
-      margin: auto;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 17px;
-      border: 1px solid rgba(247,223,145,.35);
-      background: rgba(255,255,255,.06);
-      border-radius: 50px;
-      color: var(--gold-light);
-      font-weight: 600;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 {
-      font-family: "Noto Serif Bengali", serif;
-      font-size: clamp(38px, 6vw, 68px);
-      line-height: 1.2;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 span {
-      color: var(--gold-light);
-    }
-
-    .hero p {
-      font-size: 19px;
-      color: rgba(255,255,255,.83);
-      max-width: 760px;
-      margin: auto;
-    }
-
-    .hero-buttons {
-      margin-top: 32px;
-      display: flex;
-      justify-content: center;
-      gap: 13px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      border: none;
-      cursor: pointer;
-      padding: 14px 25px;
-      border-radius: 12px;
-      font-family: inherit;
-      font-size: 16px;
-      font-weight: 700;
-      transition: .25s;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold), #f2ce61);
-      color: #17261d;
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,.28);
-      background: rgba(255,255,255,.07);
-      color: white;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    /* ================= TRUST ================= */
-
-    .trust-strip {
-      margin-top: -38px;
-      position: relative;
-      z-index: 5;
-    }
-
-    .trust-box {
-      background: white;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 25px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .trust-item {
-      text-align: center;
-      padding: 8px 15px;
-      border-right: 1px solid var(--border);
-    }
-
-    .trust-item:last-child {
-      border-right: none;
-    }
-
-    .trust-item strong {
-      display: block;
-      color: var(--primary);
-      font-size: 18px;
-    }
-
-    .trust-item span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* ================= SECTION ================= */
-
-    section {
-      padding: 85px 0;
-    }
-
-    .section-head {
-      text-align: center;
-      max-width: 750px;
-      margin: 0 auto 45px;
-    }
-
-    .section-head small {
-      color: var(--secondary);
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    .section-head h2 {
-      font-family: "Noto Serif Bengali", serif;
-      color: var(--primary);
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.3;
-      margin: 8px 0 13px;
-    }
-
-    .section-head p {
-      color: var(--muted);
-    }
-
-    /* ================= BENEFITS ================= */
-
-    .benefits {
-      background: var(--cream);
-    }
-
-    .benefit-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .benefit-card {
-      background: white;
-      padding: 30px;
-      border-radius: var(--radius);
-      border: 1px solid #eee7d7;
-      transition: .3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .benefit-card::after {
-      content: "";
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: rgba(215,169,40,.08);
-      right: -35px;
-      top: -35px;
-    }
-
-    .benefit-card:hover {
-      transform: translateY(-7px);
-      box-shadow: var(--shadow);
-    }
-
-    .icon {
-      width: 55px;
-      height: 55px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      background: #eef7f3;
-      color: var(--secondary);
-      font-size: 25px;
-      margin-bottom: 18px;
-    }
-
-    .benefit-card h3 {
-      color: var(--primary);
-      margin-bottom: 8px;
-      font-size: 21px;
-    }
-
-    .benefit-card p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    /* ================= EVENT ================= */
-
-    .event-layout {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 30px;
-      align-items: stretch;
-    }
-
-    .event-main {
-      background:
-        linear-gradient(135deg, rgba(3,39,30,.97), rgba(8,91,67,.95));
-      color: white;
-      border-radius: 28px;
-      padding: 45px;
-      box-shadow: var(--shadow);
-    }
-
-    .event-main h3 {
-      font-family: "Noto Serif Bengali", serif;
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .event-main p {
-      color: rgba(255,255,255,.78);
-    }
-
-    .event-list {
-      margin-top: 25px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .event-list div {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .check {
-      width: 27px;
-      height: 27px;
-      border-radius: 50%;
-      background: rgba(215,169,40,.18);
-      color: var(--gold-light);
-      display: grid;
-      place-items: center;
-      flex: 0 0 27px;
-    }
-
-    .event-side {
-      display: grid;
-      gap: 20px;
-    }
-
-    .mini-card {
-      background: white;
-      padding: 28px;
-      border-radius: 23px;
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 30px rgba(0,0,0,.05);
-    }
-
-    .mini-card h4 {
-      color: var(--primary);
-      margin-bottom: 7px;
-      font-size: 20px;
-    }
-
-    .mini-card p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    /* ================= REGISTRATION ================= */
-
-    .registration {
-      background:
-        linear-gradient(180deg, #f7f9f8 0%, #eef5f1 100%);
-    }
-
-    .form-wrap {
-      max-width: 850px;
-      margin: auto;
-      background: white;
-      padding: clamp(25px, 5vw, 48px);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-
-    .form-title {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .form-title h3 {
-      font-family: "Noto Serif Bengali", serif;
-      color: var(--primary);
-      font-size: 30px;
-    }
-
-    .form-title p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 19px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      font-weight: 600;
-      color: #24342d;
-      font-size: 15px;
-    }
-
-    .required {
-      color: #c62828;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      border: 1px solid #dce4df;
-      border-radius: 12px;
-      padding: 13px 14px;
-      font-family: inherit;
-      font-size: 15px;
-      outline: none;
-      background: #fbfcfb;
-      transition: .2s;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--secondary);
-      box-shadow: 0 0 0 4px rgba(12,117,88,.08);
-      background: white;
-    }
-
-    .help {
-      color: #78847e;
-      font-size: 12px;
-    }
-
-    .notice {
-      margin-top: 22px;
-      padding: 16px 18px;
-      border-radius: 14px;
-      background: #fff9e9;
-      border: 1px solid #f1dfaa;
-      color: #685620;
-      font-size: 14px;
-    }
-
-    .consent {
-      margin-top: 20px;
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      font-size: 14px;
-      color: #53615a;
-    }
-
-    .consent input {
-      width: auto;
-      margin-top: 5px;
-    }
-
-    .submit-wrap {
-      margin-top: 25px;
-      text-align: center;
-    }
-
-    .submit-btn {
-      min-width: 240px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      box-shadow: 0 12px 25px rgba(6,59,44,.2);
-    }
-
-    /* ================= SUCCESS ================= */
-
-    .success {
-      display: none;
-      text-align: center;
-      padding: 35px 15px 10px;
-    }
-
-    .success.show {
-      display: block;
-    }
-
-    .success-icon {
-      width: 76px;
-      height: 76px;
-      margin: auto auto 18px;
-      border-radius: 50%;
-      background: #e7f7ed;
-      color: var(--success);
-      display: grid;
-      place-items: center;
-      font-size: 40px;
-      font-weight: 700;
-    }
-
-    .success h3 {
-      font-family: "Noto Serif Bengali", serif;
-      color: var(--primary);
-      font-size: 29px;
-      margin-bottom: 8px;
-    }
-
-    .success p {
-      color: var(--muted);
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .reference {
-      margin: 20px auto;
-      max-width: 380px;
-      padding: 13px;
-      background: #f4f8f5;
-      border-radius: 12px;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    /* ================= FAQ ================= */
-
-    .faq {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    details {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      margin-bottom: 12px;
-      padding: 18px 20px;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    details p {
-      color: var(--muted);
-      margin-top: 12px;
-      font-size: 15px;
-    }
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      background: #031f18;
-      color: rgba(255,255,255,.72);
-      padding: 45px 0 25px;
-    }
-
-    .footer-main {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: start;
-    }
-
-    .footer-brand {
-      color: white;
-      font-size: 23px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .footer-main p {
-      font-size: 14px;
-    }
-
-    .footer-right {
-      text-align: right;
-    }
-
-    .copyright {
-      margin-top: 35px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,.08);
-      text-align: center;
-      font-size: 13px;
-    }
-
-    /* ================= RESPONSIVE ================= */
-
-    @media (max-width: 850px) {
-      .benefit-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .event-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-box {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-item {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-        padding-bottom: 16px;
-      }
-
-      .trust-item:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .nav {
-        min-height: 65px;
-      }
-
-      .brand {
-        font-size: 15px;
-      }
-
-      .brand-logo {
-        width: 39px;
-        height: 39px;
-      }
-
-      .nav-btn {
-        padding: 8px 13px;
-        font-size: 13px;
-      }
-
-      .hero {
-        padding: 65px 0 80px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .benefit-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .field.full {
-        grid-column: auto;
-      }
-
-      .event-main {
-        padding: 30px 23px;
-      }
-
-      .footer-main {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-right {
-        text-align: left;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বিশেষ ঘোষণা ও নতুন ওয়েবসাইট রেজিস্ট্রেশন পোর্টাল</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Bangla Supported) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+        }
+    </style>
 </head>
+<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-blue-900 min-h-screen text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
 
-<body>
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto px-4 py-8 md:py-12">
+        
+        <!-- Header Banner / Card -->
+        <div class="glass-effect rounded-3xl shadow-2xl overflow-hidden border border-white/20 p-6 md:p-12 relative mb-8">
+            
+            <!-- Top Alert Badge -->
+            <div class="text-center mb-6">
+                <span class="bg-red-600 text-white text-xs md:text-sm font-bold px-5 py-2 rounded-full uppercase tracking-wider animate-pulse shadow-lg inline-block">
+                    ⚠️ জরুরি ও বিশেষ ঘোষণা — ২০২৬
+                </span>
+                <h1 class="text-2xl md:text-5xl font-extrabold text-slate-900 mt-5 leading-tight">
+                    নতুন ওয়েবসাইটে সদস্যদের জন্য বিশেষ ঘোষণা
+                </h1>
+            </div>
 
-  <!-- ================= HEADER ================= -->
+            <!-- Intro Text -->
+            <div class="space-y-4 text-slate-700 text-base md:text-lg leading-relaxed border-b border-slate-200 pb-8">
+                <p class="font-bold text-indigo-900 text-lg">সম্মানিত প্রিয় প্রতিনিধি ও সদস্যবৃন্দ,</p>
+                <p>
+                    যেসব সম্মানিত প্রতিনিধি ও সদস্য এখনো আমাদের নতুন ওয়েবসাইটের অ্যাকাউন্ট, নতুন টি-শার্ট এবং আইডি কার্ড পাননি, তাদের অনুরোধ করা যাচ্ছে—নিচের আবেদন ফরমটি দ্রুত পূরণ করে জমা দিন।
+                </p>
+            </div>
 
-  <header>
-    <div class="container nav">
+            <!-- About Website Features -->
+            <div class="py-8 border-b border-slate-200">
+                <h2 class="text-2xl font-bold text-indigo-900 mb-4 flex items-center gap-2">
+                    🌐 আমাদের নতুন ওয়েবসাইটের আধুনিক সুযোগ-সুবিধা
+                </h2>
+                <p class="text-slate-600 mb-6">
+                    আপনাদের জন্য তৈরি করা হয়েছে একটি সম্পূর্ণ আধুনিক, প্রফেশনাল ও উন্নতমানের অনলাইন সংবাদ প্ল্যাটফর্ম, যেখানে একজন প্রতিনিধির সংবাদ প্রকাশ ও পরিচয় ব্যবস্থাপনাকে আরও সহজ করা হয়েছে।
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm md:text-base text-slate-700">
+                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ অডিও নিউজ প্রকাশ</div>
+                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ ভিডিও নিউজ প্রকাশ</div>
+                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ ই-পেপার ও নিউজ ফটো কার্ড</div>
+                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ সরাসরি সংবাদ প্রচার ও লাইভ টিভি</div>
+                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ প্রতিনিধিদের নিজস্ব অ্যাকাউন্ট</div>
+                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ কিউআর কোডযুক্ত আইডি কার্ড</div>
+                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ প্রতিনিধির তথ্য যাচাই ও অটো ওয়াটারমার্ক</div>
+                    <div class="flex items-center gap-3 bg-indigo-50/80 p-3.5 rounded-2xl border border-indigo-100">✅ অটোমেটিক সংবাদ আপলোড সিস্টেম</div>
+                </div>
+                <p class="text-sm font-bold text-indigo-600 mt-4 text-center bg-indigo-100/50 py-2 rounded-xl">+ আরও ১০০+ আধুনিক সুযোগ-সুবিধা সম্বলিত প্ল্যাটফর্ম!</p>
+            </div>
 
-      <a href="#" class="brand">
-        <div class="brand-logo">স</div>
-        <span>স্বাধীন বাংলা প্রেসক্লাব</span>
-      </a>
+            <!-- Video Section -->
+            <div class="py-8 border-b border-slate-200 text-center">
+                <h2 class="text-xl md:text-2xl font-bold text-indigo-900 mb-3">🎬 নতুন ওয়েবসাইটের ভিডিও প্রিভিউ</h2>
+                <p class="text-sm text-slate-600 mb-4">নিচের ভিডিওতে আমাদের নতুন ওয়েবসাইটের কার্যক্রম ও সুবিধাগুলো দেখে নিন।</p>
+                
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-300">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/OZxgCbBQ448" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
 
-      <a href="#registration" class="nav-btn">
-        নিবন্ধন করুন
-      </a>
+            <!-- Countdown Timer Section -->
+            <div class="py-6 my-8 text-center bg-amber-50 rounded-3xl p-6 border-2 border-amber-200 shadow-inner">
+                <h3 class="text-amber-900 font-bold text-lg mb-2">⏳ আপনার আবেদনের জন্য বাকি সময়</h3>
+                <div id="countdown" class="text-3xl md:text-5xl font-mono font-black text-red-600 tracking-wider">
+                    01 : 00 : 00
+                </div>
+                <p class="text-xs md:text-sm text-amber-800 mt-1 font-medium">ঘণ্টা : মিনিট : সেকেন্ড</p>
+                <p class="text-sm text-red-700 font-bold mt-3">«সময় শেষ হয়ে গেলে আবেদন গ্রহণের সুযোগ আর নাও থাকতে পারে!»</p>
+            </div>
 
-    </div>
-  </header>
+            <!-- Important Notice -->
+            <div class="bg-red-50 border-l-8 border-red-600 p-5 rounded-r-2xl my-6 shadow-sm">
+                <h4 class="font-bold text-red-900 text-lg mb-1">⚠️ গুরুত্বপূর্ণ ঘোষণা</h4>
+                <p class="text-sm md:text-base text-red-800 leading-relaxed">
+                    ভবিষ্যতে আর কোনো অনলাইন নিয়োগ প্রদান করা হবে না। এটি অনলাইনভিত্তিক সদস্য/প্রতিনিধি আবেদন গ্রহণের বিশেষ সুযোগ। পরবর্তীতে আর কোনোদিন অনলাইনভিত্তিক নিয়োগ বা একই ধরনের আবেদন গ্রহণ করা হবে না। তাই সুযোগ হাতছাড়া না করে দ্রুত আবেদন করুন।
+                </p>
+            </div>
 
+            <!-- INTEGRATED APPLICATION FORM SECTION (A to Z Built Inside Code) -->
+            <div id="apply-section" class="mt-10 pt-8 border-t-2 border-slate-200">
+                <div class="text-center mb-8">
+                    <span class="bg-indigo-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase">অনলাইন রেজিস্ট্রেশন ফর্ম</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mt-3">আপনার তথ্য দিয়ে ফরমটি পূরণ করুন</h2>
+                    <p class="text-sm text-slate-600 mt-1">সঠিক তথ্য দিয়ে নিচের ফর্মটি সাবমিট করুন। পরবর্তী কার্যক্রম সম্পন্ন করা হবে।</p>
+                </div>
 
-  <!-- ================= HERO ================= -->
+                <!-- Custom Built Application Form -->
+                <form id="regForm" onsubmit="handleFormSubmit(event)" class="space-y-5 bg-slate-50/80 p-6 md:p-8 rounded-3xl border border-slate-200 shadow-lg">
+                    
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">আপনার পূর্ণ নাম (Full Name) <span class="text-red-500">*</span></label>
+                        <input type="text" id="fullName" required placeholder="আপনার নাম বাংলায় বা ইংরেজিতে লিখুন" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none bg-white text-slate-800 font-medium">
+                    </div>
 
-  <section class="hero">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">মোবাইল নম্বর (WhatsApp No) <span class="text-red-500">*</span></label>
+                            <input type="tel" id="phone" required placeholder="যেমন: 017XXXXXXXX" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none bg-white text-slate-800 font-medium">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">পদবি / রেসপন্সিবিলিটি <span class="text-red-500">*</span></label>
+                            <input type="text" id="designation" required placeholder="যেমন: প্রতিনিধি / সাংবাদিক" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none bg-white text-slate-800 font-medium">
+                        </div>
+                    </div>
 
-    <div class="container">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">জেলা ও উপজেলা <span class="text-red-500">*</span></label>
+                            <input type="text" id="location" required placeholder="যেমন: ঠাকুরগাঁও, রাণীশংকৈল" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none bg-white text-slate-800 font-medium">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">টি-শার্ট সাইজ (T-Shirt Size) <span class="text-red-500">*</span></label>
+                            <select id="tshirtSize" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none bg-white text-slate-800 font-medium">
+                                <option value="">সাইজ নির্বাচন করুন</option>
+                                <option value="M">Medium (M)</option>
+                                <option value="L">Large (L)</option>
+                                <option value="XL">Extra Large (XL)</option>
+                                <option value="XXL">Double XL (XXL)</option>
+                            </select>
+                        </div>
+                    </div>
 
-      <div class="hero-content">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">আপনার ইমেইল ঠিকানা (Optional)</label>
+                        <input type="email" id="email" placeholder="example@gmail.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none bg-white text-slate-800 font-medium">
+                    </div>
 
-        <div class="eyebrow">
-          ✦ বিশেষ আয়োজন
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold text-lg py-4 rounded-2xl shadow-xl hover:shadow-indigo-500/40 transition transform hover:-translate-y-0.5">
+                        🚀 আবেদন সম্পূর্ণ করুন ও সাবমিট করুন
+                    </button>
+                </form>
+
+                <!-- Success Message Box (Hidden by default) -->
+                <div id="successBox" class="hidden text-center bg-emerald-50 border-2 border-emerald-500 p-8 rounded-3xl mt-6 shadow-xl">
+                    <div class="text-5xl mb-3">🎉</div>
+                    <h3 class="text-2xl font-bold text-emerald-900 mb-2">আপনার আবেদন সফলভাবে জমা হয়েছে!</h3>
+                    <p class="text-emerald-700 text-base">আমাদের টেকনিক্যাল টিম আপনার তথ্য যাচাই করে খুব শীঘ্রই আপনার সাথে যোগাযোগ করবে এবং আপনার নতুন অ্যাকাউন্ট, আইডি কার্ড ও টি-শার্ট পৌঁছে দেওয়া হবে। ধন্যবাদ!</p>
+                </div>
+            </div>
+
         </div>
 
-        <h1>
-          স্বাধীন বাংলা প্রেসক্লাবের
-          <span>মিলন মেলা</span>
-        </h1>
-
-        <p>
-          দেশের বিভিন্ন প্রান্তে কর্মরত গণমাধ্যমকর্মী ও সম্মানিত সদস্যদের
-          নিয়ে আয়োজিত হতে চলেছে একটি বিশেষ মিলন মেলা।
-          পারস্পরিক যোগাযোগ, সম্মাননা ও সৌহার্দ্যপূর্ণ মিলনের এই আয়োজনে
-          আপনিও অংশ নিন।
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#registration" class="btn btn-primary">
-            রেজিস্ট্রেশন করুন
-          </a>
-
-          <a href="#benefits" class="btn btn-outline">
-            সুযোগ-সুবিধা দেখুন
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= TRUST STRIP ================= -->
-
-  <div class="container trust-strip">
-
-    <div class="trust-box">
-
-      <div class="trust-item">
-        <strong>সম্মানিত সদস্যদের জন্য</strong>
-        <span>বিশেষ আয়োজন ও সুবিধা</span>
-      </div>
-
-      <div class="trust-item">
-        <strong>আনুষ্ঠানিক সম্মাননা</strong>
-        <span>সদস্যদের জন্য সম্মাননা কার্যক্রম</span>
-      </div>
-
-      <div class="trust-item">
-        <strong>সুশৃঙ্খল নিবন্ধন</strong>
-        <span>তথ্য যাচাই ও নিশ্চিতকরণ প্রক্রিয়া</span>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- ================= BENEFITS ================= -->
-
-  <section class="benefits" id="benefits">
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <small>সদস্যদের জন্য বিশেষ সুবিধা</small>
-
-        <h2>
-          মিলন মেলায় থাকছে নানা আয়োজন
-        </h2>
-
-        <p>
-          প্রতিষ্ঠানের সিদ্ধান্ত অনুযায়ী অনুষ্ঠানে অংশগ্রহণকারী
-          যোগ্য সদস্যদের জন্য বিভিন্ন সম্মাননা ও সুবিধার ব্যবস্থা থাকবে।
-        </p>
-
-      </div>
-
-
-      <div class="benefit-grid">
-
-        <div class="benefit-card">
-          <div class="icon">🏆</div>
-          <h3>সাংবাদিক সম্মাননা ক্রেস্ট</h3>
-          <p>
-            যোগ্য সদস্যদের জন্য সাংবাদিকতা ও গণমাধ্যমকর্মী হিসেবে
-            বিশেষ সম্মাননার ব্যবস্থা থাকবে।
-          </p>
-        </div>
-
-
-        <div class="benefit-card">
-          <div class="icon">📜</div>
-          <h3>সম্মাননা সার্টিফিকেট</h3>
-          <p>
-            নির্ধারিত প্রক্রিয়া অনুযায়ী সদস্যদের জন্য
-            সম্মাননা সার্টিফিকেট প্রদানের ব্যবস্থা থাকবে।
-          </p>
-        </div>
-
-
-        <div class="benefit-card">
-          <div class="icon">👕</div>
-          <h3>বিশেষ টি-শার্ট</h3>
-          <p>
-            মিলন মেলা ও সদস্যদের জন্য নির্ধারিত বিশেষ
-            টি-শার্ট প্রদানের ব্যবস্থা থাকবে।
-          </p>
-        </div>
-
-
-        <div class="benefit-card">
-          <div class="icon">🤝</div>
-          <h3>মিলন ও যোগাযোগ</h3>
-          <p>
-            বিভিন্ন অঞ্চলের গণমাধ্যমকর্মীদের মধ্যে যোগাযোগ ও
-            পারস্পরিক সম্পর্ক গড়ে তোলার সুযোগ।
-          </p>
-        </div>
-
-
-        <div class="benefit-card">
-          <div class="icon">🍽️</div>
-          <h3>খাওয়া-দাওয়ার আয়োজন</h3>
-          <p>
-            অনুষ্ঠানে অংশগ্রহণকারী সদস্যদের জন্য
-            আয়োজকদের পক্ষ থেকে খাবারের ব্যবস্থা থাকবে।
-          </p>
-        </div>
-
-
-        <div class="benefit-card">
-          <div class="icon">📦</div>
-          <h3>অনুপস্থিত সদস্যদের জন্য</h3>
-          <p>
-            যারা অনুষ্ঠানে অংশগ্রহণ করতে পারবেন না, তাদের জন্য
-            প্রযোজ্য সম্মাননা সামগ্রী কুরিয়ারের মাধ্যমে পাঠানোর
-            ব্যবস্থা থাকতে পারে।
-          </p>
-        </div>
-
-      </div>
+        <!-- Footer -->
+        <footer class="text-center text-slate-400 text-sm py-4">
+            <p>© ২০২৬ নতুন ওয়েবসাইট ম্যানেজমেন্ট টিম | সর্বস্বত্ব সংরক্ষিত।</p>
+        </footer>
 
     </div>
 
-  </section>
-
-
-  <!-- ================= EVENT DETAILS ================= -->
-
-  <section>
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <small>বিশেষ ঘোষণা</small>
-
-        <h2>
-          সদস্যরা কীভাবে সুবিধা পাবেন?
-        </h2>
-
-      </div>
-
-
-      <div class="event-layout">
-
-        <div class="event-main">
-
-          <h3>
-            মিলন মেলায় অংশগ্রহণ করুন
-          </h3>
-
-          <p>
-            নির্ধারিত প্রক্রিয়ায় নিবন্ধন সম্পন্ন করার পর আপনার
-            তথ্য যাচাই করা হবে। পরবর্তী নির্দেশনা ও অনুষ্ঠানসংক্রান্ত
-            গুরুত্বপূর্ণ তথ্য প্রযোজ্য ক্ষেত্রে SMS-এর মাধ্যমে জানানো হবে।
-          </p>
-
-          <div class="event-list">
-
-            <div>
-              <span class="check">✓</span>
-              <span>নিবন্ধন তথ্য জমা</span>
-            </div>
-
-            <div>
-              <span class="check">✓</span>
-              <span>সদস্য তথ্য যাচাই</span>
-            </div>
-
-            <div>
-              <span class="check">✓</span>
-              <span>নিশ্চিতকরণ SMS</span>
-            </div>
-
-            <div>
-              <span class="check">✓</span>
-              <span>পরবর্তী নির্দেশনা প্রদান</span>
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="event-side">
-
-          <div class="mini-card">
-
-            <h4>যারা অংশগ্রহণ করতে পারবেন</h4>
-
-            <p>
-              নির্ধারিত যোগ্যতা ও সদস্যপদ অনুযায়ী যেসব সদস্য
-              মিলন মেলায় অংশগ্রহণের সুযোগ পাবেন, তাদের জন্য
-              অনুষ্ঠানে নির্ধারিত সুবিধাগুলো থাকবে।
-            </p>
-
-          </div>
-
-
-          <div class="mini-card">
-
-            <h4>যারা অংশগ্রহণ করতে পারবেন না</h4>
-
-            <p>
-              অনুষ্ঠানে উপস্থিত হতে না পারা যোগ্য সদস্যদের জন্য
-              প্রযোজ্য সম্মাননা সামগ্রী কুরিয়ারের মাধ্যমে পাঠানোর
-              ব্যবস্থা থাকলে তা নিবন্ধিত তথ্য অনুযায়ী সম্পন্ন করা হবে।
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= REGISTRATION ================= -->
-
-  <section class="registration" id="registration">
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <small>Member Registration</small>
-
-        <h2>
-          মিলন মেলা নিবন্ধন ফর্ম
-        </h2>
-
-        <p>
-          নিচের তথ্যগুলো সঠিকভাবে পূরণ করুন। তথ্য যাচাইয়ের পর
-          পরবর্তী নির্দেশনা আপনাকে জানানো হবে।
-        </p>
-
-      </div>
-
-
-      <div class="form-wrap">
-
-        <!-- FORM -->
-
-        <form id="registrationForm">
-
-          <div class="form-title">
-
-            <h3>
-              সদস্য তথ্য জমা দিন
-            </h3>
-
-            <p>
-              অনুগ্রহ করে সঠিক ও প্রয়োজনীয় তথ্য প্রদান করুন।
-            </p>
-
-          </div>
-
-
-          <div class="form-grid">
-
-            <!-- NAME -->
-
-            <div class="field full">
-
-              <label>
-                আপনার পূর্ণ নাম <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="আপনার পূর্ণ নাম লিখুন"
-                required
-              />
-
-            </div>
-
-
-            <!-- MOBILE -->
-
-            <div class="field">
-
-              <label>
-                মোবাইল নম্বর <span class="required">*</span>
-              </label>
-
-              <input
-                type="tel"
-                id="mobile"
-                name="mobile"
-                placeholder="01XXXXXXXXX"
-                pattern="01[0-9]{9}"
-                required
-              />
-
-            </div>
-
-
-            <!-- DISTRICT -->
-
-            <div class="field">
-
-              <label>
-                জেলা <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                id="district"
-                name="district"
-                placeholder="আপনার জেলা"
-                required
-              />
-
-            </div>
-
-
-            <!-- UPAZILA -->
-
-            <div class="field">
-
-              <label>
-                উপজেলা <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                id="upazila"
-                name="upazila"
-                placeholder="আপনার উপজেলা"
-                required
-              />
-
-            </div>
-
-
-            <!-- ID CARD -->
-
-            <div class="field">
-
-              <label>
-                সদস্য/আইডি কার্ড নম্বর
-                <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                id="cardNumber"
-                name="cardNumber"
-                placeholder="আপনার আইডি কার্ড নম্বর"
-                required
-              />
-
-              <span class="help">
-                আপনার আইডি কার্ডে থাকা নম্বরটি লিখুন।
-              </span>
-
-            </div>
-
-
-            <!-- ADDRESS -->
-
-            <div class="field full">
-
-              <label>
-                কুরিয়ার গ্রহণের ঠিকানা
-                <span class="required">*</span>
-              </label>
-
-              <textarea
-                id="address"
-                name="address"
-                rows="3"
-                placeholder="বাড়ি/গ্রাম, ইউনিয়ন/ওয়ার্ড, উপজেলা, জেলা লিখুন"
-                required
-              ></textarea>
-
-            </div>
-
-          </div>
-
-
-          <!-- NOTICE -->
-
-          <div class="notice">
-
-            <strong>বিশেষ দ্রষ্টব্য:</strong>
-
-            আপনার আইডি কার্ড এখনো গ্রহণ না করে থাকলে,
-            অনুগ্রহ করে সংশ্লিষ্ট সাপোর্ট টিমের সঙ্গে যোগাযোগ করে
-            বিষয়টি নিশ্চিত করুন। শুধুমাত্র প্রয়োজনীয় ও যাচাইযোগ্য
-            তথ্য প্রদান করুন।
-
-          </div>
-
-
-          <!-- CONSENT -->
-
-          <label class="consent">
-
-            <input
-              type="checkbox"
-              id="consent"
-              required
-            />
-
-            <span>
-              আমি নিশ্চিত করছি যে উপরের তথ্যগুলো আমার জ্ঞাতসারে
-              প্রদান করছি এবং নিবন্ধন ও যোগাযোগের প্রয়োজনে
-              প্রতিষ্ঠান এগুলো ব্যবহার করতে পারবে।
-            </span>
-
-          </label>
-
-
-          <!-- SUBMIT -->
-
-          <div class="submit-wrap">
-
-            <button
-              type="submit"
-              class="btn submit-btn"
-            >
-              তথ্য জমা দিন
-            </button>
-
-          </div>
-
-        </form>
-
-
-        <!-- SUCCESS MESSAGE -->
-
-        <div class="success" id="successMessage">
-
-          <div class="success-icon">
-            ✓
-          </div>
-
-          <h3>
-            অভিনন্দন!
-          </h3>
-
-          <p>
-            আপনার নিবন্ধন তথ্য সফলভাবে জমা হয়েছে।
-            তথ্যগুলো যাচাই করার পর পরবর্তী নির্দেশনা ও
-            কনফার্মেশন SMS আপনার মোবাইল নম্বরে পাঠানো হবে।
-          </p>
-
-          <div class="reference">
-            নিবন্ধন রেফারেন্স:
-            <span id="referenceNumber"></span>
-          </div>
-
-          <button
-            class="btn btn-primary"
-            onclick="location.reload()"
-          >
-            নতুন করে নিবন্ধন
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= FAQ ================= -->
-
-  <section>
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <small>সাধারণ প্রশ্ন</small>
-
-        <h2>
-          আপনার জানা প্রয়োজন
-        </h2>
-
-      </div>
-
-
-      <div class="faq">
-
-        <details>
-
-          <summary>
-            নিবন্ধনের পর কী হবে?
-          </summary>
-
-          <p>
-            আপনার দেওয়া তথ্য যাচাই করা হবে। যাচাই সম্পন্ন হলে
-            প্রযোজ্য ক্ষেত্রে পরবর্তী নির্দেশনা SMS-এর মাধ্যমে
-            জানানো হবে।
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            অনুষ্ঠানে উপস্থিত হতে না পারলে কী হবে?
-          </summary>
-
-          <p>
-            যোগ্য সদস্য অনুষ্ঠানে উপস্থিত হতে না পারলে,
-            প্রযোজ্য সম্মাননা সামগ্রী কুরিয়ারের মাধ্যমে
-            পাঠানোর ব্যবস্থা থাকলে তা নিবন্ধিত তথ্য অনুযায়ী
-            সম্পন্ন করা হবে।
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            নিবন্ধনের সময় কোন তথ্য দিতে হবে?
-          </summary>
-
-          <p>
-            পূর্ণ নাম, মোবাইল নম্বর, জেলা, উপজেলা, সদস্য/আইডি
-            কার্ড নম্বর এবং কুরিয়ার গ্রহণের ঠিকানা দিতে হবে।
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            ভুল তথ্য দিলে কী হবে?
-          </summary>
-
-          <p>
-            তথ্য জমা দেওয়ার আগে সব তথ্য ভালোভাবে যাচাই করুন।
-            ভুল তথ্যের কারণে পরবর্তী যোগাযোগ বা ডেলিভারিতে
-            সমস্যা হতে পারে।
-          </p>
-
-        </details>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= FOOTER ================= -->
-
-  <footer>
-
-    <div class="container">
-
-      <div class="footer-main">
-
-        <div>
-
-          <div class="footer-brand">
-            স্বাধীন বাংলা প্রেসক্লাব
-          </div>
-
-          <p>
-            গণমাধ্যমকর্মী ও সদস্যদের পারস্পরিক যোগাযোগ,
-            সম্মাননা ও সহযোগিতার লক্ষ্যে আয়োজিত বিশেষ উদ্যোগ।
-          </p>
-
-        </div>
-
-
-        <div class="footer-right">
-
-          <p>
-            সদস্যদের তথ্যের গোপনীয়তা ও নিরাপত্তাকে
-            সর্বোচ্চ গুরুত্ব দেওয়া উচিত।
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="copyright">
-
-        © <span id="year"></span>
-        স্বাধীন বাংলা প্রেসক্লাব — সর্বস্বত্ব সংরক্ষিত।
-
-      </div>
-
-    </div>
-
-  </footer>
-
-
-  <!-- ================= JAVASCRIPT ================= -->
-
-  <script>
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-
-    const form =
-      document.getElementById("registrationForm");
-
-    const successMessage =
-      document.getElementById("successMessage");
-
-    const referenceNumber =
-      document.getElementById("referenceNumber");
-
-
-    form.addEventListener("submit", function(event) {
-
-      event.preventDefault();
-
-
-      /*
-        DEMO STORAGE
-
-        এখানে শুধু ব্রাউজারে ডেমো হিসেবে তথ্য রাখা হচ্ছে।
-        Production website-এ অবশ্যই নিরাপদ backend/database ব্যবহার করুন।
-      */
-
-      const data = {
-
-        name:
-          document.getElementById("name").value.trim(),
-
-        mobile:
-          document.getElementById("mobile").value.trim(),
-
-        district:
-          document.getElementById("district").value.trim(),
-
-        upazila:
-          document.getElementById("upazila").value.trim(),
-
-        cardNumber:
-          document.getElementById("cardNumber").value.trim(),
-
-        address:
-          document.getElementById("address").value.trim(),
-
-        submittedAt:
-          new Date().toISOString()
-
-      };
-
-
-      const registrationList =
-        JSON.parse(
-          localStorage.getItem("pressClubRegistrations") || "[]"
-        );
-
-
-      registrationList.push(data);
-
-
-      localStorage.setItem(
-        "pressClubRegistrations",
-        JSON.stringify(registrationList)
-      );
-
-
-      /*
-        রেজিস্ট্রেশন নম্বর
-      */
-
-      const ref =
-        "SBPC-" +
-        Date.now().toString().slice(-8);
-
-
-      referenceNumber.textContent = ref;
-
-
-      /*
-        FORM HIDE
-      */
-
-      form.style.display = "none";
-
-
-      /*
-        SUCCESS SHOW
-      */
-
-      successMessage.classList.add("show");
-
-
-      /*
-        SUCCESS SECTION-এ স্ক্রল
-      */
-
-      successMessage.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-
-    });
-
-  </script>
-
+    <!-- JavaScript for Handling Form & Dynamic Actions -->
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent page reload
+            
+            // Get form values if needed for processing
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+
+            // Hide form and show gorgeous success greeting
+            document.getElementById('regForm').style.display = 'none';
+            document.getElementById('successBox').classList.remove('hidden');
+
+            // Optional: You can connect this to Google Sheets API or Formspree later if you want server storage!
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
